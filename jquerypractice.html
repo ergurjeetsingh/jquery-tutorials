@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-3.3.1.js"></script> 
+	<title>demo</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+</head>
+<body>
+	<section>
+		<div class="container"> 
+			<div class="row">
+				<div class="col-12 p-4"> 
+					<form action="aafd">
+						<div class="form-group">
+						    <label for="exampleInputEmail1">Email address</label>
+						    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						   
+						  </div>
+						  <div id="adrs" class="form-group">
+						    <label for="exampleInputEmail1"> address</label>
+						    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						   
+						  </div>
+						  <div id="apend" class="form-group">
+						  	
+						  </div>
+						  <div>
+						  	<a href=""> hello </a>
+						  	<button id="btn">Add More</button>
+						  </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		$(document).on('click','#btn',function(e){
+			e.preventDefault();
+			address= $('#adrs').html();
+			$('#apend').append("<div>"+address+"<button class='remove'>Remove</button></div>");
+			console.log(address);
+
+		});
+		$(document).on('click','.remove',function(e){
+			e.preventDefault();
+			 // $(this).prevAll('label , input').remove();
+			 $(this).parent().remove();
+			
+		});			
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
