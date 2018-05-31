@@ -14,15 +14,18 @@
 					<div>
 						<h1>Add address and remove address</h1>
 					</div>
-					<form action="aafd">
+					<form >
 						<div class="form-group">
+							<label>First Name</label>
+							<input id="fname" type="text" name="fname">
+							<span > </span>
 						    <label for="exampleInputEmail1">Email address</label>
 						    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 						   
 						  </div>
 						  <div id="adrs" class="form-group">
 						    <label for="exampleInputEmail1"> address</label>
-						    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter gggh">
 						   
 						  </div>
 						  <div id="apend" class="form-group">
@@ -38,7 +41,26 @@
 		</div>
 	</section>
 	<script type="text/javascript">
-		$(document).on('click','#btn',function(e){
+
+
+		$("#fname").on('blur', function(event){
+			fname = $(this).val();
+
+			if(fname==""){
+				$(this).css('border','1px solid red');
+				$(this).siblings('span').text('first name is mandatory');
+
+			}
+			else{
+				$(this).css('border','1px solid green');
+				$(this).siblings('span').text('');
+			}
+			console.log(fname);
+			// console.log(event);
+		});
+
+
+		$(document).on('click','#btn', function(e){
 			e.preventDefault();
 			address= $('#adrs').html();
 			$('#apend').append("<div>"+address+"<button class='remove'>Remove</button></div>");
